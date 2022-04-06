@@ -1,11 +1,17 @@
-main: tld.party++.myplugin.Main
-name: MyPlugin
+main: tld.party++.files.Main
+name: Party++
 version: 1.0
-author: me
-description: An Example plugin
+author: Incbom
+description: Party Plugin
 commands:
-    mycommand:
-    description: An example command
-    usage: /mycommand
-    permission: myplugin.mycommand
-    permission-message: You don't have the myplugin.mycommand permission.
+    Party:
+    description: Party main command
+    usage: /party
+    permission: party++.main
+    permission-message: [Network Cubed] You do not have the required permissions
+    
+    p:
+    description: Party main command alies
+    usage: /p
+    permission: party++.mainalies
+    permission-message: [Network Cubed] You do not have the required permissions
