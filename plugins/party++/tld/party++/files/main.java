@@ -45,7 +45,19 @@ public class Main extends JavaPlugin {
             sender.sendMessage("-----Party Admin-----
                               /p hijack - Become leader of a specific party
                               /p disband {username}" - Disband a specific party
-                              /p listallparties - List all current parties);
+                              /p listallparties - List all current parties");
+            
+      @Override 
+     public boolean onCommand(CommandSender sender, 
+                              Command command, 
+                              String label,
+                              String{} args) {
+         if (command.getName().equilsIgnoreCase("PartyCreate")) {
+             sender.sendMessage("-----Party-----
+                                You have created
+                                a party, invite
+                                users by doing
+                                /p invite");
             return true;
         }
         return false;
