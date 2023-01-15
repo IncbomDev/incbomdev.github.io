@@ -2,16 +2,30 @@
 <html>
 
 <body style="background-color:powderblue;">
-	<h3>Calculators</h3>
-  <a href="warning.html">
-		<button>Distance Calculator (WIP)</button>
-  </a>
-	<a href="acceleration.html">
-		<button>Acceleration Calculator</button>
+	<h3> Kinematics Calculator </h3>
+	<form onsubmit="return false;" method="post">
+		<input placeholder="Inital Velocity" type="text" id="initVel" />
+        <input placeholder="Time" type="text" id="time" />
+        <input placeholder="Acceleration" type="text" id="accel" />
+		<input type="submit" onclick="calculate();" />
+	</form>
+	<a href="index.html">
+		<button>Back to Calculators</button>
 	</a>
-  <a href="traveltime.html">
-		<button>Travel Time Calculator</button>
-	</a>
+	<script>
+	//function getInput() {
+	/*   var termVelCalc = document.getElementById("termVel").value;
+	   var initVelCalc = document.getElementById("initVel").value;
+	      var accelCalc = document.getElementById("accel").value;
+	   alert(termVelCalc + " " + initVelCalc + " " + accelCalc);}*/
+	function calculate() {
+		var initVelCalc = document.getElementById("initVel").value;
+		var accelCalc = document.getElementById("accel").value;
+        var timeCalc = document.getElementById("time").value;
+		var answer = initVelCalc * timeCalc + 0.5 * accelCalc * timeCalc **2;
+		alert("Answer: " + answer + " ft/s")
+	}
+	</script>
 	<style>
 	button {
 		appearance: button;
