@@ -4,9 +4,14 @@
 <body style="background-color:powderblue;">
 	<h3> Acceleration Calculator </h3>
 	<form onsubmit="return false;" method="post">
-		<input placeholder="Distance Traveled" type="text" id="civ" />
-		<input placeholder="Time took" type="text" id="cit" />
+		<input placeholder="Final velocity (Ending vel)" type="text" id="vF" />
+		<input placeholder="Initial velocity (Starting vel)" type="text" id="vI" />
+		<input placeholder="Time" type="text" id="time" />
 		<input type="submit" onclick="calculate();" />
+		<p id="answer">Click submit to show answer</p>
+		<p>How we got that:</p>
+		<p>Acceleration = (Final velocity - Initial velocity) / Time</p>
+		<p id="workline3">So, (vF - vI) / Time = answer ft/s^2</p>
 	</form>
 	<a href="index.html">
 		<button>Back to Calculators</button>
@@ -18,10 +23,12 @@
 	      var accelCalc = document.getElementById("accel").value;
 	   alert(termVelCalc + " " + initVelCalc + " " + accelCalc);}*/
 	function calculate() {
-		var civCalc = document.getElementById("civ").value;
-		var citCalc = document.getElementById("cit").value;
-		var answer = civCalc / citCalc
-		alert("Answer: " + answer + " ft/s^2");
+		var vFcalc = document.getElementById("vF").value;
+		var vIcalc = document.getElementById("vI").value;
+		var timeCalc = document.getElementById("time").value;
+		var answer = (vFcalc - vIcalc) / timeCalc;
+		document.getElementById("answer").innerHTML = answer + " ft/s^2";
+		document.getElementById("workline3").innerHTML = "So, (" + vFcalc + " - " + vIcalc + ") / " + timeCalc + " = " + answer + " ft/s^2";
 	}
 	</script>
 	<style>

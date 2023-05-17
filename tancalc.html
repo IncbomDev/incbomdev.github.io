@@ -2,27 +2,30 @@
 <html>
 
 <body style="background-color:powderblue;">
-	<h3>Calculators</h3>
-  <a href="warning.html">
-		<button>Distance Calculator (WIP)</button>
-  </a>
-	<a href="acceleration.html">
-		<button>Acceleration Calculator</button>
+	<h3> Tangent Calculator </h3>
+    <title> Tangent Calculator </title>
+	<form onsubmit="return false;" method="post">
+		<input placeholder="Opposite" type="text" id="opp" />
+        <input placeholder="Adjacent" type="text" id="adj" />
+		<input type="submit" onclick="calculate();" />
+	</form>
+    <p id="answer">Click submit to see the answer</p>
+    <p>How we got that:</p>
+    <p>The formula for tan = Opposite / Adjacent</p>
+    <p id="formulaimplement">So, the answer is tan = inputOpp / inputAdj</p>
+	<a href="index.html">
+		<button>Back to Calculators</button>
 	</a>
-  <a href="traveltime.html">
-		<button>Travel Time Calculator</button>
-	</a>
-	<a href="sincalc.html">
-		<button>Sin Calculator</button>
-	</a>
-	<a href="coscalc.html">
-		<button>Cos Calculator</button>
-	</a>
-	<a href="tancalc.html">
-		<button>Tan Calculator</button>
-	</a>
+	<script>
+	function calculate() {
+		var oppCalc = document.getElementById("opp").value;
+		var adjCalc = document.getElementById("adj").value;
+		var answer = (oppCalc/adjCalc);
+		document.getElementById("answer").innerHTML = answer + " radians";
+        document.getElementById("formulaimplement").innerHTML = "So, the answer is tan = " + oppCalc + " / " + adjCalc  + " = " + answer + " radians";
+	}
+	</script>
 	<style>
-	
 	button {
 		appearance: button;
 		backface-visibility: hidden;
