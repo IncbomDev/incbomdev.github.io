@@ -74,7 +74,7 @@
       var rarity = document.getElementById("rarity").value;
 
       // Generate the code
-      var generatedCode = generateCode(itemName, itemType, red, green, blue, itemLore, strength, speed, defense, health, mana, bonusName1, bonusDescription1, bonusName2, bonusDescription2, rarity);
+      var generatedCode = generateCode(itemName, publicidentifier, itemType, red, green, blue, itemLore, strength, speed, defense, health, mana, bonusName1, bonusDescription1, bonusName2, bonusDescription2, rarity);
 
       // Display the generated code
       document.getElementById("generatedCode").innerText = generatedCode;
