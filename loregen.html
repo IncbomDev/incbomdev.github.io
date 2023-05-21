@@ -9,6 +9,7 @@
     <label for="itemName">Item Name:</label>
     <input type="text" id="itemName" required><br><br>
     <input type="text" id="itemType" placeholder="item type" required><br><br>
+    <input type="text" id="public identifier" placeholder="public identifier" required><br><br>
 
     <label for="itemColor">Item Color (RGB):</label>
     <input type="number" id="red" min="0" max="255" required>
@@ -55,6 +56,7 @@
 
       // Get user input values
       var itemName = document.getElementById("itemName").value;
+      var publicidentifier = document.getElementById("public identifier").value;
       var itemType = document.getElementById("itemType").value;
       var red = document.getElementById("red").value;
       var green = document.getElementById("green").value;
@@ -78,8 +80,8 @@
       document.getElementById("generatedCode").innerText = generatedCode;
     });
 
-    function generateCode(itemName, itemType, red, green, blue, itemLore, strength, speed, defense, health, mana, bonusName1, bonusDescription1, bonusName2, bonusDescription2, rarity) {
-      var code = "public static void createVoidHelmet() {\n";
+    function generateCode(itemName, publicidentifier, itemType, red, green, blue, itemLore, strength, speed, defense, health, mana, bonusName1, bonusDescription1, bonusName2, bonusDescription2, rarity) {
+      var code = "public static void create" +publicidentifier+ "() {\n";
       code += "  ItemStack item = new ItemStack(Material." + itemType + ", 1);\n";
       code += "  ItemMeta meta = item.getItemMeta();\n";
       code += "  meta.setDisplayName(\"&7" + itemName + "\");\n";
